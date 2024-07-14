@@ -1,27 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WebGL Triangle</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Personal Portfolio Webpage</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <canvas width=500px height=500px ></canvas>
-    <div>
-        <button id="startButton">Start Movement</button>
-    </div>
-    <div>
-        <label for="ySlider">Move Y: </label>
-        <input type="range" id="ySlider" min="-1" max="1" step="0.01" value="0">
-    </div>
-    <div>
-        <label for="Angulo">Roda Roda: </label>
-        <input type="range" id="Angulo" min="0" max="360" step="1" value="0">
-    </div>
-    <div>
-        <label for="Angulo">Tamanho: </label>
-        <input type="range" id="escala" min="0" max="5" step="0.1" value="1">
-    </div>
-    <script src="script.js"></script>
+  <header>
+    <nav id="navbar">
+      <ul>
+        <li class="nav-item"><a href="#about" class="nav-link">About</a></li>
+        <li class="nav-item"><a href="#projects" class="nav-link">Projects</a></li>
+        <li class="nav-item"><a href="#contact" class="nav-link">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <section id="welcome-section">
+      <h1>Welcome, I am Lidia</h1>
+      <h2>Student of Responsive Web Design</h2>
+    </section>
+    <section id="projects">
+      <h2 class="project-tile">Projects</h2>
+      <div class="project-item">
+        <h3>Survey Form </h3>
+        <p>This project showcases a responsive HTML form styled with CSS, designed to gather feedback on HTML skills. The form includes fields for name, email, age, current HTML knowledge level, practice frequency, topics of interest, and challenges faced. The design features a clean layout with vibrant colors and thoughtful usability enhancements. Built with a mobile-first approach, it ensures accessibility and ease of use across devices.</p>
+        <a href="https://github.com/dilia-w/Responsive-Web-Design/blob/main/1%20-%20Survey%20Form%20HTML" class="project-link" target="_blank">View on GitHub</a>
+      </div>
+      <div class="project-item">
+        <h3>Tribute Page</h3>
+        <p>This project pays homage to Alan Turing, a pioneering figure in computer science and cryptography. The page features a timeline of Turing's life and achievements, including his groundbreaking work on theoretical computing, code-breaking during World War II, and contributions to artificial intelligence. Designed with a clean and structured layout, the page uses responsive design principles to ensure optimal viewing on various devices. It includes a prominent image of Turing and provides links for further exploration of his life and legacy.</p>
+        <a href="https://github.com/dilia-w/Responsive-Web-Design/blob/main/2%20-%20Tribute%20Page%20HTML" class="project-link" target="_blank">View on GitHub</a>
+      </div>
+      <div class="project-item">
+        <h3>Technical Documentation Page</h3>
+        <p>This project serves as a technical guide to a Simple Light Intensity Control System, designed to automatically adjust light brightness based on ambient conditions. The documentation includes sections covering system introduction, components, setup instructions, control system design using a Proportional (P) controller, and operational guidelines with troubleshooting tips.
+
+The page features a responsive layout with a navigation sidebar for easy access to different sections. Each section is detailed with clear headers, informative paragraphs, and structured lists, providing a comprehensive overview of both hardware (microcontroller, light sensor, LED) and software (control code) components.</p>
+        <a href="https://github.com/dilia-w/Responsive-Web-Design/blob/main/3%20-%20Technical%20Documentation%20Page%20HTML" class="project-link" target="_blank">View on GitHub</a>
+      </div>
+      <div class="project-item">
+        <h3>Product Landing Page</h3>
+        <p>This project showcases a responsive Product Landing Page for a Fitness Brand, designed to promote personalized training plans. The page features a dynamic header with the brand logo and navigation bar for seamless user experience. Sections include an enticing hero section highlighting personalized training benefits, detailed plan options with subscription calls-to-action, customer testimonials, and a contact form for inquiries.
+
+The design emphasizes clarity and accessibility, with a clean layout using contrasting colors and engaging CTAs to encourage user interaction. The use of flexbox ensures responsive and visually appealing content alignment across different devices, enhancing usability and engagement.</p>
+        <a href="https://github.com/dilia-w/Responsive-Web-Design/blob/main/4%20-%20Product%20Landing%20Page%20HTML" class="project-link" target="_blank">View on GitHub</a>
+      </div>
+    </section>
+    <section id="contact">
+      <h2>Contact Me</h2>
+      <p>Let's work together! Reach out via email or connect with me on social media.</p>
+      <ul class="social-links">
+        <li><a href="https://twitter.com/dilia_w" target="_blank">Twitter</a></li>
+        <li><a href="https://linkedin.com/in/dilia-w" target="_blank">LinkedIn</a></li>
+        <li><a href="https://github.com/dilia-w" target="_blank" id="profile-link">GitHub</a></li>
+      </ul>
+      <p>Email: <a href="mailto:your-email@example.com">ldmrtnll@gmail.com</a></p>
+    </section>
+  </main>
 </body>
 </html>

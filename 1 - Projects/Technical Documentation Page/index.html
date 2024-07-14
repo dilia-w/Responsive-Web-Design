@@ -1,27 +1,78 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WebGL Triangle</title>
-</head>
-<body>
-    <canvas width=500px height=500px ></canvas>
-    <div>
-        <button id="startButton">Start Movement</button>
-    </div>
-    <div>
-        <label for="ySlider">Move Y: </label>
-        <input type="range" id="ySlider" min="-1" max="1" step="0.01" value="0">
-    </div>
-    <div>
-        <label for="Angulo">Roda Roda: </label>
-        <input type="range" id="Angulo" min="0" max="360" step="1" value="0">
-    </div>
-    <div>
-        <label for="Angulo">Tamanho: </label>
-        <input type="range" id="escala" min="0" max="5" step="0.1" value="1">
-    </div>
-    <script src="script.js"></script>
-</body>
-</html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="freeCodeCamp Accessibility Quiz practice project" />
+    <title>Technical Documentation Page</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <nav id="navbar">
+      <header>
+        <a class="nav-link" href="#Introduction">Introduction</a>
+        <a class="nav-link" href="#Components">Components</a>
+      <a class="nav-link" href="#Setup">Setup</a>
+      <a class="nav-link" href="#Control_System_Design">Control System Design</a>
+      <a class="nav-link" href="#Operation_and_Troubleshooting">Operation and Troubleshooting</a>
+      </header>
+    </nav>
+    <main id="main-doc">
+      <section id="Introduction" class="main-section">
+        <header>Introduction
+    </header>
+    <p>This document provides an overview of a Simple Light Intensity Control System, designed to automatically adjust the brightness of a light source based on ambient light levels. </p>
+    <p>This system is useful for applications such as maintaining consistent lighting in a room or reducing power consumption by dimming lights in bright environments.</p>
+    <ul>
+  <li>Purpose: To create an energy-efficient lighting system.</li>
+  <li>Applications: Indoor lighting, street lighting, and greenhouse lighting.</li>
+  <li>Advantages: Energy savings, improved lighting consistency, and reduced manual adjustments.</li>
+</ul>
+      </section>
+      <section id="Components" class="main-section">
+        <header>Components
+    </header>
+    <p> The system comprises both hardware and software components. The hardware includes a microcontroller, such as an Arduino or ESP32, a light sensor like an LDR (Light Dependent Resistor), and an actuator, typically an LED. </p>
+    <p>The software component consists of the control code that runs on the microcontroller, which reads the sensor data and adjusts the LED brightness accordingly.</p>
+      </section>
+      <section id="Setup" class="main-section">
+        <header>Setup
+    </header>
+    <p>To set up the system, follow the circuit diagram to connect the microcontroller, light sensor, and LED. The light sensor should be connected to an analog input pin on the microcontroller, and the LED should be connected to a PWM-capable output pin. </p>
+    <p>After assembling the hardware, upload the provided control code to the microcontroller using a development environment like the Arduino IDE. Ensure all connections are secure before powering up the system.</p>
+      </section>
+      <section id="Control_System_Design" class="main-section">
+        <header>Control System Design
+    </header>
+    <p>The control system uses a simple Proportional (P) controller to manage light intensity. The light sensor measures the ambient light level and sends this data to the microcontroller. The microcontroller then calculates the difference between the desired light level and the actual ambient light level. Based on this difference, the microcontroller adjusts the LED brightness proportionally. </p>
+    <p>This helps maintain a consistent light intensity in varying ambient conditions.</p>
+    <ul>
+  <li>Proportional Controller: Basic control method used.</li>
+  <li>Sensor Data Processing: How data from the sensor is handled.
+</li>
+  <li>Brightness Adjustment Algorithm: Logic for adjusting the LED brightness.</li>
+</ul>
+      </section>
+      <section id="Operation_and_Troubleshooting" class="main-section">
+        <header>Operation and Troubleshooting
+    </header>
+    <p>Once the system is set up and the code is uploaded, power on the microcontroller. The system will automatically start reading the ambient light level and adjusting the LED brightness. If the system does not work as expected, check common issues such as loose connections, incorrect wiring, or errors in the uploaded code. Ensure the light sensor is correctly positioned and not obstructed. </p>
+    <p>If problems persist, recheck the circuit diagram and verify the software setup.</p>
+    <p>Example Code:</p>
+    <pre><code>const int sensorPin = A0; // Pin connected to LDR</code></pre>
+  <pre><code>const int ledPin = 9; // Pin connected to LED</code></pre>
+  <pre><code>void setup() {
+  pinMode(ledPin, OUTPUT);
+  Serial.begin(9600);
+}</code></pre>
+  <pre><code>void loop() {
+  int sensorValue = analogRead(sensorPin);
+  int ledValue = map(sensorValue, 0, 1023, 255, 0);
+  analogWrite(ledPin, ledValue);
+  Serial.println(sensorValue);
+  <code>delay(100);</code>
+}</code></pre>
+      </section>
+    </main>
+  </body>
+  </html>

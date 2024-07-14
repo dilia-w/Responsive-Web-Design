@@ -1,27 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WebGL Triangle</title>
-</head>
-<body>
-    <canvas width=500px height=500px ></canvas>
-    <div>
-        <button id="startButton">Start Movement</button>
-    </div>
-    <div>
-        <label for="ySlider">Move Y: </label>
-        <input type="range" id="ySlider" min="-1" max="1" step="0.01" value="0">
-    </div>
-    <div>
-        <label for="Angulo">Roda Roda: </label>
-        <input type="range" id="Angulo" min="0" max="360" step="1" value="0">
-    </div>
-    <div>
-        <label for="Angulo">Tamanho: </label>
-        <input type="range" id="escala" min="0" max="5" step="0.1" value="1">
-    </div>
-    <script src="script.js"></script>
-</body>
-</html>
+    <title>Survey Form</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <h1 id="title">Survey Form</h1>
+    <p id="description">Thank you for taking the time to help me improve my HTML skills.</p>
+    <form id="survey-form">
+      <fieldset>
+        <label id="name-label" for="first-name">Name: <input placeholder="Enter your name" id="name" name="first-name" type="text" required /></label>
+        <label id="email-label" for="email">Email: <input placeholder="Enter your email" id="email" id="email" name="email" type="email" required /></label>
+        <label id="number-label" for="age">Age: <input placeholder="Enter your age" id="number" type="number" name="age" min="13" max="120" /></label>
+        <label for="referrer">Which option best describes your current level of HTML knowledge?
+          <select id="dropdown" name="referrer">
+            <option value="">(select one)</option>
+            <option value="1">Beginner</option>
+            <option value="2">Intermediate</option>
+            <option value="3">Advanced</option>
+            <option value="4">Expert</option>
+            <option value="5">Other</option>
+          </select>
+        </label>
+      </fieldset>
+      <fieldset>
+        <legend>How often do you practice HTML?</legend>
+        <label for="daily-practice"><input id="daily-practice" type="radio" value="daily-practice" name="html-practice" class="inline" checked /> Daily</label>
+        <label for="weekly-practice"><input id="weekly-practice" type="radio" value="weekly-practice"name="html-practice" class="inline" /> Weekly</label>
+        <label for="monthly-practice"><input id="monthly-practice" type="radio" value="monthly-practice"name="html-practice" class="inline" /> Monthly</label>
+        <label for="rarely-practice"><input id="rarely-practice" type="radio" value="rarely-practice"name="html-practice" class="inline" /> Rarely</label>
+      </fieldset>
+      <fieldset>
+        <legend>Which HTML topics are you interested in? (Select all that apply)</legend>
+        <label for="forms-interest"><input id="forms-interest" type="checkbox" value="forms-interest" name="topics-interested" class="inline"/> Forms and Input</label>
+        <label for="table-interest"><input id="table-interest" type="checkbox" value="table-interest" name="topics-interested" class="inline"/> Tables</label>
+        <label for="semantic-interest"><input id="semantic-interest" type="checkbox" value="semantic-interest" name="topics-interested" class="inline"/> Semantic Elements</label>
+        <label for="media-interest"><input id="media-interest" type="checkbox" value="media-interest" name="topics-interested" class="inline"/> Multimedia Elements (audio, video)</label>
+        <label for="apis-interest"><input id="apis-interest" type="checkbox" value="apis-interest" name="topics-interested" class="inline"/> HTML5 APIs</label>
+        <label for="accessibility-interest"><input id="accessibility-interest" type="checkbox" value="accessibility-interest" name="topics-interested" class="inline"/> Accessibility</label>
+      </fieldset>
+      <fieldset>
+        <label for="bio">What challenges have you faced while learning HTML?
+          <textarea id="challenges" name="challenges" rows="3" cols="35" placeholder="Describe any difficulties or obstacles you've encountered..."></textarea>
+        </label>
+      </fieldset>
+      <input id="submit" type="submit" value="Submit" />
+    </form>
+  </body>
